@@ -60,6 +60,8 @@ const puppeteer = require('puppeteer');
       .createWriteStream(path.join(outcomePath, `${fileName}.txt`))
     writeStream.write(title)
     writeStream.write(content)
+
+    console.log(`輸出位置: ${path.join(outcomePath, `${fileName}.txt`)}`)
   
     await browser.close(); 
   } catch (error) {
