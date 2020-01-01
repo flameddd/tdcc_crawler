@@ -51,6 +51,11 @@ const puppeteer = require('puppeteer');
     const now = new Date();
     // 輸出檔名格式：stockNo(targetDate)-年_月_日_小時_分_秒.txt
     const fileName = `${targetStockNo}(${targetDate})-${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}_${now.getHours()}_${now.getMinutes()}_${now.getSeconds()}`;
+
+    fs.mkdir(`./${outcomePath}`, { recursive: true }, (err) => {
+      if (err) throw err;
+    });
+
     const writeStream = fs
       .createWriteStream(path.join(outcomePath, `${fileName}.txt`))
     writeStream.write(title)
