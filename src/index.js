@@ -39,7 +39,7 @@ const puppeteer = require('puppeteer');
       }
     });
 
-    console.log(`是否需要插入 separator 來 fotmat 輸出內容：${isNeedFormat}`)
+    console.log(`是否需要插入 separator 來 format 輸出內容：${isNeedFormat}`)
     if (isNeedFormat) {
       // 把「tab 空格」替換成 defaultSeparator
       title = title
