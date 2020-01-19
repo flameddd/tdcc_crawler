@@ -18,9 +18,9 @@ async function main() {
     let writeStream = null;
     let processCount = 0;
     
-    const targetDataNumber = STOCK_NO.length * TARGET_DATE.length
+    const targetDataNumber = STOCK_NO_TEST.length * TARGET_DATE.length
     console.log(`預期爬的資料筆數: ${targetDataNumber}`)
-    console.log(`是否需要插入 separator 來 fotmat 輸出內容：${isNeedFormat}`)
+    console.log(`是否需要插入 separator 來 format 輸出內容：${isNeedFormat}`)
     console.log(`每筆資料查詢間隔時間: ${SLEEP_SECOND} 秒`);
 
     const browser = await puppeteer.launch();
@@ -28,7 +28,7 @@ async function main() {
     // 讀取頁面，直到沒有下載了
     await page.goto(targetURL, { waitUntil: 'networkidle0' });
 
-    for (const targetStockNo of STOCK_NO) {
+    for (const targetStockNo of STOCK_NO_TEST) {
       for (const targetDate of TARGET_DATE) {
         processCount = processCount + 1;
 
